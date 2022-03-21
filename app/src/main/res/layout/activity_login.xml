@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+
+            <TextView
+                android:paddingLeft="15dp"
+                android:textSize="20sp"
+                android:textColor="#1747C3"
+                android:text="密码登录"
+                android:id="@+id/rec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </LinearLayout>
+    <ImageView
+        android:src="@drawable/holiday"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/zhpic" />
+
+            <EditText
+                android:singleLine="true"
+                android:maxLines="1"
+                android:id="@+id/username"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="请输入账号"/>
+            <ImageView
+                android:id="@+id/clear"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:tint="#000"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/pspic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:id="@+id/password"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="请输入密码"/>
+            <ImageView
+                android:id="@+id/lookps"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/eyeclose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:tint="#000" />
+
+        </LinearLayout>
+
+<LinearLayout
+    android:paddingLeft="30dp"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <CheckBox
+        android:id="@+id/read_ornot"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/protocal"
+        android:layout_marginLeft="15dp"
+        android:layout_weight="1"
+        android:text="我已阅读并同意”用户协议“与”隐私政策“"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/login"
+        android:layout_margin="10dp"
+        android:background="@drawable/shape_button"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="登录"/>
+
+    <Button
+        android:textSize="20sp"
+        android:id="@+id/zhuce"
+        android:layout_margin="10dp"
+        android:background="@drawable/shape_button"
+        android:textColor="#fff"
+        android:text="注册账号"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

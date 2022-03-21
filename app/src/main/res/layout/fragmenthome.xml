@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_marginTop="15dp"
+        android:id="@+id/appbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:background="#fff">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+
+                    android:layout_gravity="center"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/pic"
+                    android:tint="#fff" />
+
+
+            <LinearLayout
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/shape_search"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_margin="7dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/search"/>
+
+                <TextView
+
+                    android:textSize="18dp"
+                    android:id="@+id/mEditSearch"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:background="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="荒野求生贝爷"
+                    android:imeOptions="actionSearch"
+                    />
+
+
+
+            </LinearLayout>
+            <ImageView
+                android:layout_marginRight="15dp"
+                android:src="@drawable/information"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.ogaclejapan.smarttablayout.SmartTabLayout
+            android:layout_height="48dp"
+            android:layout_width="match_parent"
+            android:id="@+id/hometab"
+            android:background="@drawable/shape_myinfo"
+            app:stl_underlineThickness="1px"
+            app:stl_underlineColor="@color/color_e5"
+            app:stl_indicatorWithoutPadding="true"
+            app:stl_indicatorThickness="2dp"
+            app:stl_indicatorInterpolation="linear"
+            app:stl_indicatorColor="@color/blue"
+            app:stl_dividerColor="@color/transparent"
+            app:stl_distributeEvenly="true"
+            app:stl_defaultTabTextSize="20sp"
+            app:stl_defaultTabTextHorizontalPadding="5dp"
+            app:stl_defaultTabTextColor="#ffffff"
+            android:clipToPadding="false"/>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/homevp"
+            android:layout_width="match_parent"
+            android:layout_height="580dp"/>
+
+
+<!--        <com.google.android.material.tabs.TabLayout-->
+<!--            android:id="@+id/tab_layout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+
+<!--            />-->
+<!--        <View-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:background="#1836DF"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="1px"/>-->
+<!--        <androidx.viewpager.widget.ViewPager-->
+<!--            android:id="@+id/view_pager"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/tab_layout"-->
+<!--            />-->
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

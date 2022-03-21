@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:clickable="true"
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back_search"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/shape_search"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            >
+            <LinearLayout
+
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_margin="7dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/search"/>
+
+                <TextView
+
+                    android:textSize="18dp"
+                    android:id="@+id/mEditSearch"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:background="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="荒野求生贝爷"
+                    android:imeOptions="actionSearch"
+                    />
+
+
+
+            </LinearLayout>
+    </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.ogaclejapan.smarttablayout.SmartTabLayout
+            android:layout_height="48dp"
+            android:layout_width="match_parent"
+            android:id="@+id/searchtab"
+            android:background="@drawable/shape_myinfo"
+            app:stl_underlineThickness="1px"
+            app:stl_underlineColor="@color/color_e5"
+            app:stl_indicatorWithoutPadding="true"
+            app:stl_indicatorThickness="2dp"
+            app:stl_indicatorInterpolation="linear"
+            app:stl_indicatorColor="@color/blue"
+            app:stl_dividerColor="@color/transparent"
+            app:stl_distributeEvenly="true"
+            app:stl_defaultTabTextSize="20sp"
+            app:stl_defaultTabTextHorizontalPadding="5dp"
+            app:stl_defaultTabTextColor="#ffffff"
+            android:clipToPadding="false"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Spinner
+
+                android:layout_weight="1"
+                android:id="@+id/spinner1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                />
+            <Spinner
+
+                android:layout_weight="1"
+                android:id="@+id/spinner2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                />
+        </LinearLayout>
+        <View
+            android:layout_marginRight="20dp"
+            android:background="#1836DF"
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="1px"/>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/searchvp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+    </LinearLayout>
+</LinearLayout>
+

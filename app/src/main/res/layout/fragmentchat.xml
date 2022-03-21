@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:background="#fff"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:paddingLeft="25dp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="社团"
+                    android:layout_margin="15dp"
+
+                    android:textSize="30dp"
+                    android:gravity="center"
+                    android:textColor="#000"
+                    />
+            </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="end"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_marginRight="15dp"
+                android:src="@drawable/information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_marginRight="20dp"
+        android:background="#1836DF"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="1px"/>
+    <RelativeLayout
+        android:id="@+id/rvlayout"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/sw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="25dp"
+            android:clickable="true"
+            android:id="@+id/add"
+            app:backgroundTint="#0c9100"
+            android:src="@drawable/add" />
+
+    </RelativeLayout>
+
+</LinearLayout>
