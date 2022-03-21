@@ -1,1 +1,1 @@
-# BaseBmob
+# EASYApp
