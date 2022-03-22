@@ -33,7 +33,7 @@ public class Push_info extends BmobObject {
     }
 
     private BmobRelation relation;
-    private String isrelated;
+
 
 
     public BmobRelation getRelation() {
@@ -44,13 +44,6 @@ public class Push_info extends BmobObject {
         this.relation = relation;
     }
 
-    public String getIsrelated() {
-        return isrelated;
-    }
-
-    public void setIsrelated(String isrelated) {
-        this.isrelated = isrelated;
-    }
 
     public String getTitle() {
         return title;

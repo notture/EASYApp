@@ -90,6 +90,7 @@ public class Recive extends AppCompatActivity {
 
        getisfocused();
 
+
         Refresh();
 
 
@@ -240,7 +241,7 @@ public class Recive extends AppCompatActivity {
                 BmobQuery<Push_info> bmobQuery = new BmobQuery<>();
                 bmobQuery.getObject(Id, new QueryListener<Push_info>() {
                     @Override
-                    public void done(Push_info post, BmobException e) {
+                    public void done(Push_info pos, BmobException e) {
                         if (!related) {
                             Intent in = getIntent();
                             String Id = in.getStringExtra("id");
@@ -261,6 +262,22 @@ public class Recive extends AppCompatActivity {
                                     } else {
                                         Toast.makeText(Recive.this, "收藏失败", Toast.LENGTH_SHORT).show();
                                     }
+                                }
+                            });
+                            BmobQuery<User> b = new BmobQuery<>();
+                            b.getObject(BmobUser.getCurrentUser().getObjectId(), new QueryListener<User>() {
+                                @Override
+                                public void done(User user, BmobException e) {
+                                    BmobRelation r = new BmobRelation();
+                                    Push_info p = new Push_info();
+                                    p.setObjectId(id_push);
+                                    r.add(p);
+                                    user.setRelation_Push(r);
+                                    user.update(new UpdateListener() {
+                                        @Override
+                                        public void done(BmobException e) {
+                                        }
+                                    });
                                 }
                             });
                         } else {
@@ -285,10 +302,25 @@ public class Recive extends AppCompatActivity {
                                     }
                                 }
                             });
+                            BmobQuery<User> b = new BmobQuery<>();
+                            b.getObject(BmobUser.getCurrentUser().getObjectId(), new QueryListener<User>() {
+                                @Override
+                                public void done(User user, BmobException e) {
+                                    BmobRelation r = new BmobRelation();
+                                    Push_info p = new Push_info();
+                                    p.setObjectId(id_push);
+                                    r.remove(p);
+                                    user.setRelation_Push(r);
+                                    user.update(new UpdateListener() {
+                                        @Override
+                                        public void done(BmobException e) {
+                                        }
+                                    });
+                                }
+                            });
                         }
                     }
                 });
-
             }
         });
 

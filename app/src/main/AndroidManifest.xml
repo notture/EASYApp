@@ -42,6 +42,7 @@
         <activity android:name=".Activity.MyFocused" />
         <activity android:name=".Activity.Setting" />
         <activity android:name=".Activity.Protocal" />
+        <activity android:name=".Activity.MyCollect" />
 
         <provider
             android:name="cn.bmob.v3.util.BmobContentProvider"

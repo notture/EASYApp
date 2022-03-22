@@ -22,6 +22,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.myapplication.Activity.MyCollect;
 import com.example.myapplication.Activity.MyFocused;
 import com.example.myapplication.Activity.MyInfo;
 import com.example.myapplication.Activity.MyPush;
@@ -136,7 +137,10 @@ public class FragmentMine extends Fragment {
         mycollect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                User user = BmobUser.getCurrentUser(User.class);
+                Intent intent = new Intent(getActivity(), MyCollect.class);
+                intent.putExtra("user_onlyid",user.getObjectId());
+                startActivity(intent);
             }
         });
 
