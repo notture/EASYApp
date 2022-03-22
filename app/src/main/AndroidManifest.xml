@@ -13,6 +13,10 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!--允许读取手机状态 用于创建BmobInstallation-->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!--权限适配Android8.0的安装权限管理-->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <meta-data android:value="Channel ID" android:name="BMOB_CHANNEL"/>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon8"
@@ -43,6 +47,11 @@
         <activity android:name=".Activity.Setting" />
         <activity android:name=".Activity.Protocal" />
         <activity android:name=".Activity.MyCollect" />
+        <activity
+            android:name="cn.bmob.v3.update.UpdateDialogActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity android:name=".Activity.MyFollowed" />
 
         <provider
             android:name="cn.bmob.v3.util.BmobContentProvider"

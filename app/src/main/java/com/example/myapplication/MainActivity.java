@@ -8,7 +8,7 @@ import android.os.Bundle;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.example.myapplication.Adapter.SectionsPagerAdapter;
-import com.example.myapplication.Fragment.FragmentChat;
+import com.example.myapplication.Fragment.FragmentClub;
 import com.example.myapplication.Fragment.FragmentHome;
 import com.example.myapplication.Fragment.FragmentMine;
 
@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity
 
         bottomnavigationBar
                 .addItem(new BottomNavigationItem(R.drawable.homefill, "首页").setInactiveIconResource(R.drawable.home))
-                .addItem(new BottomNavigationItem(R.drawable.dynamicfill, "论坛")
-                        .setInactiveIconResource(R.drawable.dynamic))
+                .addItem(new BottomNavigationItem(R.drawable.club_balck, "论坛")
+                        .setInactiveIconResource(R.drawable.club))
                 .addItem(new BottomNavigationItem(R.drawable.minefill, "我的").setInactiveIconResource(R.drawable.mine))
                 .setFirstSelectedPosition(0).initialise();
 
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity
 
         fragments = new ArrayList<Fragment>();
         fragments.add(new FragmentHome());
-        fragments.add(new FragmentChat());
+        fragments.add(new FragmentClub());
         fragments.add(new FragmentMine());
 
         viewpager.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager(), fragments));
@@ -104,17 +104,3 @@ public class MainActivity extends AppCompatActivity
     }
 }
 
-// BmobUser user = BmobUser.getCurrentUser(User.class);
-// String id = user.getObjectId();
-// BmobQuery<User> myuser = new BmobQuery<User>();
-// myuser.getObject(id, new QueryListener<User>() {
-// @Override
-// public void done(User user, BmobException e) {
-// if (e == null){
-// username.setText(user.getUsername());
-// nickname.setText(user.getNickname());
-// }else {
-// Toast.makeText(MainActivity.this, "查询失败", Toast.LENGTH_SHORT).show();
-// }
-// }
-// });

@@ -7,6 +7,7 @@ import cn.bmob.v3.datatype.BmobRelation;
 public class focused_followed extends BmobObject {
     String author;
     BmobRelation focused;
+    BmobRelation followed;
     Integer focused_sum;
     Integer followed_sum;
 
@@ -50,5 +51,5 @@ public class focused_followed extends BmobObject {
         this.followed = followed;
     }
 
-    BmobRelation followed;
+
 }

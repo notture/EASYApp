@@ -170,23 +170,6 @@ public class SearchActivity extends AppCompatActivity {
     }
     void add_his_dis() {
 
-//        for (int i = 0; i < 6; i++) {//为历史记录添加小组件
-//            TextView tv = new TextView(this);
-//            tv.setText(array_his[i]);
-//            tv.setTextSize(TypedValue.COMPLEX_UNIT_SP,16);
-//            tv.setPadding(30,10,30,10);
-//            tv.setBackgroundResource(R.drawable.shape_flow);
-//            tv.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    mEditSearch.setText(tv.getText().toString().trim());
-//                    search();
-//                }
-//            });
-//            flowLayout_his.addView(tv);//普通添加
-//        }
-
-
         for (int i = 0; i < array_dis.length; i++) {//为搜索发现添加小组件
             TextView tv = new TextView(this);
             tv.setText(array_dis[i]);

@@ -22,6 +22,7 @@ import java.util.TimerTask;
 
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.update.BmobUpdateAgent;
 
 public class Splash extends AppCompatActivity {
 
@@ -55,6 +56,9 @@ public class Splash extends AppCompatActivity {
         }, 3000);
 
         Bmob.initialize(Splash.this,"84078c04b530bea0a8ba92774d606afc");
+
+        //软件自动更新
+        //BmobUpdateAgent.initAppVersion();
 
         sp_time.setOnClickListener(new View.OnClickListener() {
             @Override

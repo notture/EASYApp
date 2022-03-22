@@ -7,6 +7,9 @@
         <entry key="..\:/SearchPageApp/app/src/main/res/drawable/back_search.xml" value="0.14270833333333333" />
         <entry key="..\:/SearchPageApp/app/src/main/res/drawable/backx.xml" value="0.265625" />
         <entry key="..\:/SearchPageApp/app/src/main/res/drawable/bk.xml" value="0.19010416666666666" />
+        <entry key="..\:/SearchPageApp/app/src/main/res/drawable/bmob_update_button_cancel_bg_focused.xml" value="0.265625" />
+        <entry key="..\:/SearchPageApp/app/src/main/res/drawable/bmob_update_button_cancel_bg_normal.xml" value="0.265625" />
+        <entry key="..\:/SearchPageApp/app/src/main/res/drawable/bmob_update_button_ok_bg_tap.xml" value="0.26153846153846155" />
         <entry key="..\:/SearchPageApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.265625" />
         <entry key="..\:/SearchPageApp/app/src/main/res/drawable/item_select.xml" value="0.21302083333333333" />
         <entry key="..\:/SearchPageApp/app/src/main/res/drawable/search.xml" value="0.19010416666666666" />
@@ -16,6 +19,7 @@
         <entry key="..\:/SearchPageApp/app/src/main/res/drawable/shape_choosegender.xml" value="0.19010416666666666" />
         <entry key="..\:/SearchPageApp/app/src/main/res/drawable/shape_edit.xml" value="0.265625" />
         <entry key="..\:/SearchPageApp/app/src/main/res/drawable/shape_flow.xml" value="0.21302083333333333" />
+        <entry key="..\:/SearchPageApp/app/src/main/res/drawable/shape_myinfo.xml" value="0.26153846153846155" />
         <entry key="..\:/SearchPageApp/app/src/main/res/drawable/shape_reghelp.xml" value="0.19010416666666666" />
         <entry key="..\:/SearchPageApp/app/src/main/res/drawable/shape_search.xml" value="0.14270833333333333" />
         <entry key="..\:/SearchPageApp/app/src/main/res/drawable/shape_spltime.xml" value="0.19010416666666666" />
@@ -24,6 +28,7 @@
         <entry key="..\:/SearchPageApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/SearchPageApp/app/src/main/res/layout/activity_mycollect.xml" value="0.17916666666666667" />
         <entry key="..\:/SearchPageApp/app/src/main/res/layout/activity_myfocused.xml" value="0.24947916666666667" />
+        <entry key="..\:/SearchPageApp/app/src/main/res/layout/activity_myfollowed.xml" value="0.24947916666666667" />
         <entry key="..\:/SearchPageApp/app/src/main/res/layout/activity_myfollower.xml" value="0.1609375" />
         <entry key="..\:/SearchPageApp/app/src/main/res/layout/activity_myinfo.xml" value="0.17395833333333333" />
         <entry key="..\:/SearchPageApp/app/src/main/res/layout/activity_mypush.xml" value="0.24947916666666667" />
@@ -35,6 +40,7 @@
         <entry key="..\:/SearchPageApp/app/src/main/res/layout/activity_search.xml" value="0.24947916666666667" />
         <entry key="..\:/SearchPageApp/app/src/main/res/layout/activity_setting.xml" value="0.24947916666666667" />
         <entry key="..\:/SearchPageApp/app/src/main/res/layout/activity_splash.xml" value="0.17395833333333333" />
+        <entry key="..\:/SearchPageApp/app/src/main/res/layout/bmob_update_dialog.xml" value="0.24947916666666667" />
         <entry key="..\:/SearchPageApp/app/src/main/res/layout/dialog_review.xml" value="0.19375" />
         <entry key="..\:/SearchPageApp/app/src/main/res/layout/follower_item.xml" value="0.264" />
         <entry key="..\:/SearchPageApp/app/src/main/res/layout/foot_item.xml" value="0.1265625" />

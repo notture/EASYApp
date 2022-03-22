@@ -32,7 +32,7 @@ import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 
-public class FragmentChat extends Fragment {
+public class FragmentClub extends Fragment {
 
     private RecyclerView rv;
     private SwipeRefreshLayout srlayout;

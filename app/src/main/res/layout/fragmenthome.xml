@@ -76,6 +76,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
+        android:layout_marginTop="5dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -91,12 +92,12 @@
             app:stl_indicatorWithoutPadding="true"
             app:stl_indicatorThickness="2dp"
             app:stl_indicatorInterpolation="linear"
-            app:stl_indicatorColor="@color/blue"
+            app:stl_indicatorColor="@color/black"
             app:stl_dividerColor="@color/transparent"
             app:stl_distributeEvenly="true"
             app:stl_defaultTabTextSize="20sp"
             app:stl_defaultTabTextHorizontalPadding="5dp"
-            app:stl_defaultTabTextColor="#ffffff"
+            app:stl_defaultTabTextColor="#000000"
             android:clipToPadding="false"/>
 
         <androidx.viewpager.widget.ViewPager

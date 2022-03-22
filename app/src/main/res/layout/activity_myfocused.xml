@@ -38,7 +38,7 @@
 
     <TextView
         android:visibility="gone"
-        android:id="@+id/myfollowed_error"
+        android:id="@+id/myfocused_error"
         android:layout_marginTop="60dp"
         android:gravity="center"
         android:textColor="#000"
@@ -50,12 +50,12 @@
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:visibility="gone"
-        android:id="@+id/myfollowed_swipe"
+        android:id="@+id/myfocused_swipe"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/myfollowed_rv"
+            android:id="@+id/myfocused_rv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 

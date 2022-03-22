@@ -24,6 +24,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.myapplication.Activity.MyCollect;
 import com.example.myapplication.Activity.MyFocused;
+import com.example.myapplication.Activity.MyFollowed;
 import com.example.myapplication.Activity.MyInfo;
 import com.example.myapplication.Activity.MyPush;
 import com.example.myapplication.Activity.Setting;
@@ -94,9 +95,7 @@ public class FragmentMine extends Fragment {
         followactivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent it = new Intent(getActivity(),MyFollower.class);
-//                it.putExtra("objectId", BmobUser.getCurrentUser(User.class).getObjectId());
-//                startActivity(it);
+                startActivity(new Intent(getActivity(), MyFollowed.class));
             }
         });
 

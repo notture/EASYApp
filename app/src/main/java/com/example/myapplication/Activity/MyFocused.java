@@ -25,10 +25,11 @@ import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.datatype.BmobPointer;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
+import cn.bmob.v3.listener.QueryListener;
 
 public class MyFocused extends AppCompatActivity {
 
-    private RecyclerView myfocusedrv;
+    private RecyclerView myfocused_rv;
     private TextView myfocused_error;
     private SwipeRefreshLayout myfocused_swipe;
 
@@ -85,8 +86,8 @@ public class MyFocused extends AppCompatActivity {
                                 if (data.size() > 0) {
                                     myfocused_swipe.setVisibility(View.VISIBLE);
                                     myFocusedAdapter = new MyFocusedAdapter(MyFocused.this, data);
-                                    myfocusedrv.setLayoutManager(new LinearLayoutManager(MyFocused.this));
-                                    myfocusedrv.setAdapter(myFocusedAdapter);
+                                    myfocused_rv.setLayoutManager(new LinearLayoutManager(MyFocused.this));
+                                    myfocused_rv.setAdapter(myFocusedAdapter);
 
                                 } else {
                                     myfocused_error.setVisibility(View.VISIBLE);
@@ -103,30 +104,7 @@ public class MyFocused extends AppCompatActivity {
 
 
 
-        /*User user = BmobUser.getCurrentUser(User.class);
-        BmobQuery<User> bmobQuery = new BmobQuery<>();
-        bmobQuery.addWhereEqualTo("relation",user);
-        bmobQuery.order("-createdAt");
-        bmobQuery.findObjects(new FindListener<User>() {
-            @Override
-            public void done(List<User> list, BmobException e) {
-              myfocused_swipe.setRefreshing(false);
-                if (e==null){
-                    data = list;
-                    if (data.size()>0){
-                        myfocused_swipe.setVisibility(View.VISIBLE);
-                        myFocusedAdapter = new MyFocusedAdapter(MyFocused.this,data);
-                        myfocusedrv.setLayoutManager(new LinearLayoutManager(MyFocused.this));
-                        myfocusedrv.setAdapter(myFocusedAdapter);
 
-                    }else {
-                        myfocused_error.setVisibility(View.VISIBLE);
-                    }
-                }else {
-                    Toast.makeText(MyFocused.this, "加载失败"+e, Toast.LENGTH_SHORT).show();
-                }
-            }
-        });*/
 
     }
 
@@ -134,9 +112,9 @@ public class MyFocused extends AppCompatActivity {
 
 
     private void initView() {
-        myfocusedrv = findViewById(R.id.myfollowed_rv);
-        myfocused_error = findViewById(R.id.myfollowed_error);
-        myfocused_swipe = findViewById(R.id.myfollowed_swipe);
+        myfocused_rv = findViewById(R.id.myfocused_rv);
+        myfocused_error = findViewById(R.id.myfocused_error);
+        myfocused_swipe = findViewById(R.id.myfocused_swipe);
         back = findViewById(R.id.back);
     }
 }
