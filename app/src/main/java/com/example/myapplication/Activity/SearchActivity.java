@@ -21,15 +21,16 @@ import android.widget.Button;
 import android.widget.TextView;
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
+import cn.bmob.v3.listener.UpdateListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
 
-    //String array_his[] = {"SUN","MON","TUE","WED","THU","FRI"};//历史信息
     String array_dis[] = {"SUN","MON","TUE","WED","THU","FRI","SAT"};//发现信息
     List<String> array_his;
     FlowLayout flowLayout_his;//历史流式布局
@@ -48,10 +49,33 @@ public class SearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        Bmob.initialize(this, "84078c04b530bea0a8ba92774d606afc");
 
+        initView();//初始化
+        initHis();
+        initHotspots();
+        initDropDown();
+        addListener();
+        add_his_dis();
+
+    }
+    void initView(){
+        flowLayout_his = findViewById(R.id.flowLayout_his);
+        flowLayout_dis = findViewById(R.id.flowLayout_dis);
+        cancel = findViewById(R.id.cancel);
+        news[0] = findViewById(R.id.news_one);
+        news[1] = findViewById(R.id.news_two);
+        news[2] = findViewById(R.id.news_three);
+        news[3] = findViewById(R.id.news_four);
+        news[4] = findViewById(R.id.news_five);
+        news[5] = findViewById(R.id.news_six);
+        mEditSearch = this.findViewById(R.id.mEditSearch);
+        cleanHis = findViewById(R.id.clean_his);
+    }
+
+    void initHis(){
         BmobQuery<HisRecord> bmobQuery = new BmobQuery<>();
         bmobQuery.order("-createdAt");
+        bmobQuery.addWhereEqualTo("author", BmobUser.getCurrentUser().getObjectId());
         bmobQuery.findObjects(new FindListener<HisRecord>() {
             @Override
             public void done(List<HisRecord> list, BmobException e) {//数据要在里面定义，否则闪退，原因不明
@@ -80,26 +104,8 @@ public class SearchActivity extends AppCompatActivity {
                 }
             }
         });
-        initView();//初始化
-        initHotspots();
-        initDropDown();
-        addListener();
-        add_his_dis();
     }
 
-    void initView(){
-        flowLayout_his = findViewById(R.id.flowLayout_his);
-        flowLayout_dis = findViewById(R.id.flowLayout_dis);
-        cancel = findViewById(R.id.cancel);
-        news[0] = findViewById(R.id.news_one);
-        news[1] = findViewById(R.id.news_two);
-        news[2] = findViewById(R.id.news_three);
-        news[3] = findViewById(R.id.news_four);
-        news[4] = findViewById(R.id.news_five);
-        news[5] = findViewById(R.id.news_six);
-        mEditSearch = this.findViewById(R.id.mEditSearch);
-        cleanHis = findViewById(R.id.clean_his);
-    }
     void initHotspots(){
         BmobQuery<Hotspot> bmobQuery = new BmobQuery<Hotspot>();
         bmobQuery.order("-createdAt");
@@ -209,6 +215,31 @@ public class SearchActivity extends AppCompatActivity {
         });
         flowLayout_his.addView(tv,0);//执行搜索后给历史记录进行添加，添加到第0个
         //finish();
+
+        BmobQuery<HisRecord> h = new BmobQuery<>();
+        h.addWhereEqualTo("author", BmobUser.getCurrentUser().getObjectId());
+        h.findObjects(new FindListener<HisRecord>() {
+            @Override
+            public void done(List<HisRecord> list, BmobException e) {
+                HisRecord HR;
+                for(int i = 0; i < list.size(); i++) {
+                    HR = list.get(i);
+                    List<String> temp;
+                    temp = HR.getHisre();
+                    temp.add(0,tv.getText().toString().trim());
+                    HR.setHisre(temp);
+                    HR.update(new UpdateListener() {
+                        @Override
+                        public void done(BmobException e) {
+
+                        }
+                    });
+
+
+                }
+            }
+        });
+
     }
 
 
