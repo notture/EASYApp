@@ -22,6 +22,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myapplication.Bean.HisRecord;
 import com.example.myapplication.Bean.User;
 import com.example.myapplication.Bean.focused_followed;
 import com.example.myapplication.R;
@@ -109,6 +110,19 @@ public class Register extends AppCompatActivity {
                                     ff.setFocused_sum(0);
                                     ff.setFollowed_sum(0);
                                     ff.save(new SaveListener<String>() {
+                                        @Override
+                                        public void done(String s, BmobException e) {
+                                            if(e == null) {
+
+                                            }else {
+                                                Toast.makeText(Register.this, "注册失败"+e, Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    });
+
+                                    HisRecord hh = new HisRecord();
+                                    hh.setAuthor(user.getObjectId());
+                                    hh.save(new SaveListener<String>() {
                                         @Override
                                         public void done(String s, BmobException e) {
                                             if(e == null) {
