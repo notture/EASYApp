@@ -19,7 +19,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 
 import android.widget.TextView;
-import cn.bmob.v3.Bmob;
+
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
@@ -43,7 +43,10 @@ public class SearchActivity extends AppCompatActivity {
     List<Hotspot> hotspots;
     List<HisRecord> hisRecords;
 
-
+    TextView his_unfold;
+    TextView dis_visible;
+    boolean unfold = false;
+    boolean invisible = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +73,8 @@ public class SearchActivity extends AppCompatActivity {
         news[5] = findViewById(R.id.news_six);
         mEditSearch = this.findViewById(R.id.mEditSearch);
         cleanHis = findViewById(R.id.clean_his);
+        his_unfold = findViewById(R.id.his_unfold);
+        dis_visible = findViewById(R.id.dis_visible);
     }
 
     void initHis(){
@@ -171,8 +176,64 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 flowLayout_his.removeAllViews();
+                BmobQuery<HisRecord> h = new BmobQuery<>();
+                h.addWhereEqualTo("author", BmobUser.getCurrentUser().getObjectId());
+                h.findObjects(new FindListener<HisRecord>() {
+                    @Override
+                    public void done(List<HisRecord> list, BmobException e) {
+                        HisRecord HR;
+                        for(int i = 0; i < list.size(); i++) {
+                            HR = list.get(i);
+                            List<String> temp;
+                            temp = HR.getHisre();
+                            temp.clear();
+                            HR.setHisre(temp);
+                            HR.update(new UpdateListener() {
+                                @Override
+                                public void done(BmobException e) {
+
+                                }
+                            });
+
+
+                        }
+                    }
+                });
             }
         });
+
+        his_unfold.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!unfold){
+                    his_unfold.setText("收起");
+                    flowLayout_his.setMaxRows(7);
+                    unfold = true;
+                }
+                else {
+                    his_unfold.setText("展开");
+                    flowLayout_his.setMaxRows(2);
+                    unfold = false;
+                }
+            }
+        });
+
+        dis_visible.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!invisible){
+                    dis_visible.setText("显示");
+                    flowLayout_dis.setVisibility(View.INVISIBLE);
+                    invisible = true;
+                }
+                else {
+                    dis_visible.setText("隐藏");
+                    flowLayout_dis.setVisibility(View.VISIBLE);
+                    invisible = false;
+                }
+            }
+        });
+
     }
     void add_his_dis() {
 

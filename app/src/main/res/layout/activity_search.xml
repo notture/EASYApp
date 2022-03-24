@@ -250,6 +250,7 @@
     </LinearLayout>
 </LinearLayout>
         <LinearLayout
+            android:orientation="horizontal"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -257,13 +258,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
+
                     android:layout_marginLeft="10dp"
                     android:textSize="20dp"
                     android:text="搜索历史"
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </LinearLayout>
+                <TextView
+
+                    android:id="@+id/his_unfold"
+                    android:layout_marginRight="10dp"
+                    android:textSize="15dp"
+                    android:text="展开"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
             </LinearLayout>
+
         </LinearLayout>
     <com.nex3z.flowlayout.FlowLayout
         android:layout_margin="10dp"
@@ -320,6 +337,20 @@
                 android:textSize="20dp"
                 android:text="搜索发现"
                 android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </LinearLayout>
+            <TextView
+
+                android:id="@+id/dis_visible"
+                android:layout_marginRight="10dp"
+                android:textSize="15dp"
+                android:text="隐藏"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>

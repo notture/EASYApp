@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity
 
         bottomnavigationBar
                 .addItem(new BottomNavigationItem(R.drawable.homefill, "首页").setInactiveIconResource(R.drawable.home))
-                .addItem(new BottomNavigationItem(R.drawable.club_balck, "论坛")
+                .addItem(new BottomNavigationItem(R.drawable.club_balck, "专题")
                         .setInactiveIconResource(R.drawable.club))
                 .addItem(new BottomNavigationItem(R.drawable.minefill, "我的").setInactiveIconResource(R.drawable.mine))
                 .setFirstSelectedPosition(0).initialise();

@@ -16,13 +16,16 @@ import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.example.myapplication.Activity.MyInfo;
 import com.example.myapplication.Activity.SearchActivity;
 import com.example.myapplication.Adapter.HomeTabAdapter;
 import com.example.myapplication.Bean.Push_info;
+import com.example.myapplication.Bean.User;
 import com.example.myapplication.R;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
@@ -31,11 +34,14 @@ import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 
 import java.util.List;
 
+import cn.bmob.v3.BmobUser;
+
 public class FragmentHome extends Fragment {
 
     private TextView homesearch;
     private SmartTabLayout smartTabLayout;
     private ViewPager viewPager;
+    private ImageView homeheadpic;
 
 
     @Nullable
@@ -54,6 +60,15 @@ public class FragmentHome extends Fragment {
 
         initTab();
 
+        homeheadpic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                User user = BmobUser.getCurrentUser(User.class);
+                Intent intent = new Intent(getActivity(), MyInfo.class);
+                intent.putExtra("user_onlyid",user.getObjectId());
+                startActivity(intent);
+            }
+        });
 
         homesearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,7 +102,7 @@ public class FragmentHome extends Fragment {
 
     private void initView() {
         homesearch = getActivity().findViewById(R.id.mEditSearch);
-
+        homeheadpic = getActivity().findViewById(R.id.home_head_pic);
         smartTabLayout = getActivity().findViewById(R.id.hometab);
         viewPager = getActivity().findViewById(R.id.homevp);
 

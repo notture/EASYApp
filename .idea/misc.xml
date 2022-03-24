@@ -3,7 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/EASYApp/app/src/main/res/drawable/shape_1.xml" value="0.18697916666666667" />
+        <entry key="..\:/EASYApp/app/src/main/res/drawable/shape_flow.xml" value="0.18697916666666667" />
+        <entry key="..\:/EASYApp/app/src/main/res/layout/activity_mycollect.xml" value="0.17291666666666666" />
+        <entry key="..\:/EASYApp/app/src/main/res/layout/activity_mypush.xml" value="0.17291666666666666" />
         <entry key="..\:/EASYApp/app/src/main/res/layout/activity_register.xml" value="0.175" />
+        <entry key="..\:/EASYApp/app/src/main/res/layout/activity_result.xml" value="0.17291666666666666" />
+        <entry key="..\:/EASYApp/app/src/main/res/layout/activity_search.xml" value="0.17291666666666666" />
+        <entry key="..\:/EASYApp/app/src/main/res/layout/fragmentchat.xml" value="0.17291666666666666" />
+        <entry key="..\:/EASYApp/app/src/main/res/layout/fragmentclub.xml" value="0.17083333333333334" />
+        <entry key="..\:/EASYApp/app/src/main/res/layout/fragmenthome.xml" value="0.17291666666666666" />
+        <entry key="..\:/EASYApp/app/src/main/res/layout/item_club.xml" value="0.17291666666666666" />
+        <entry key="..\:/EASYApp/app/src/main/res/layout/item_push.xml" value="0.17291666666666666" />
         <entry key="..\:/SearchPageApp/app/src/main/res/drawable/back.xml" value="0.19010416666666666" />
         <entry key="..\:/SearchPageApp/app/src/main/res/drawable/back_search.xml" value="0.14270833333333333" />
         <entry key="..\:/SearchPageApp/app/src/main/res/drawable/backx.xml" value="0.265625" />

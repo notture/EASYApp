@@ -18,10 +18,15 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.myapplication.Activity.PushContent;
+import com.example.myapplication.Adapter.ClubAdapter;
+import com.example.myapplication.Bean.Club;
+import com.example.myapplication.Bean.Push_info;
 import com.example.myapplication.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -39,9 +44,9 @@ public class FragmentClub extends Fragment {
     private FloatingActionButton add,addcontent,addcomunity;
     private RelativeLayout rvlayout;
 
-    //List<Comunity> data;
+    List<Club> data;
 
-    //private ChatAdapter chatAdapter;
+    private ClubAdapter clubAdapter;
 
     private PopupWindow pop;
 
@@ -50,7 +55,7 @@ public class FragmentClub extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragmentchat,container,false);
+        return inflater.inflate(R.layout.fragmentclub,container,false);
     }
 
     @Override
@@ -61,7 +66,7 @@ public class FragmentClub extends Fragment {
 
         initView();
 
-        Bmob.initialize(getActivity(),"ab34b8bf6de6d97060af91d796f2b9e1");
+
         //初始刷新一次
         Refresh();
 
@@ -101,24 +106,25 @@ public class FragmentClub extends Fragment {
     }
 
     private void Refresh() {
-//        BmobQuery<Comunity> com = new BmobQuery<>();
-//        com.setLimit(1000);
-//        com.order("-createdAt");
-//        com.findObjects(new FindListener<Comunity>() {
-//            @Override
-//            public void done(List<Comunity> list, BmobException e) {
-//                srlayout.setRefreshing(false);
-//                if (e==null){
-//                    data = list;
-//                    chatAdapter = new ChatAdapter(getActivity(),data);
-//                    rv.setLayoutManager(new LinearLayoutManager(getActivity()));
-//                    rv.setAdapter(chatAdapter);
-//                }else {
-//                    srlayout.setRefreshing(false);
-//                    Toast.makeText(getActivity(),"加载失败", Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
+        BmobQuery<Club> com = new BmobQuery<>();
+        com.setLimit(1000);
+        com.order("-createdAt");
+        com.findObjects(new FindListener<Club>() {
+            @Override
+            public void done(List<Club> list, BmobException e) {
+                srlayout.setRefreshing(false);
+                if (e==null){
+                    data = list;
+                    clubAdapter = new ClubAdapter(getActivity(),data);
+                    final GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+                    rv.setLayoutManager(gridLayoutManager);
+                    rv.setAdapter(clubAdapter);
+                }else {
+                    srlayout.setRefreshing(false);
+                    Toast.makeText(getActivity(),"加载失败", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     private void initView() {
